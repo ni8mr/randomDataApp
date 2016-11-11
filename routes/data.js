@@ -6,7 +6,7 @@ router.get('/', function(req,res){
 	var user = {
 		authorised: false
 	};
-	res.render('weather', user);
+	res.render('data', user);
 });
 
 
