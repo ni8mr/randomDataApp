@@ -1,0 +1,23 @@
+extends layout
+
+block append head
+  link(rel="stylesheet", href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css")
+
+block content
+  if authorised
+    h1= 'Hello ' + name + ', Welcome to the random info page'
+    p
+    p
+    table#weatherTable
+    script(src='https://code.jquery.com/jquery-2.2.4.min.js')
+    script(src='/javascripts/DataTable/dataTable.min.js')
+    script(src='/javascripts/weather.js')
+  else 
+    h1 You have to enter your name to see the weather forcast
+
+    form(action='/weather', method='post')
+      input(type='text', name='name')
+      input(type='submit', value='Submit')
+
+block footer
+  p This app is developed by Reza
